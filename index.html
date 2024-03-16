@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Scheduler</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       
+        <div class="input-grid">
+            <div></div>
+            <input class="js-taskname" placeholder="Enter Task">
+            <input class="js-taskdate" type="date">
+            <button onclick="
+                addTask();
+            " class="add-btn">Add</button>
+            <div></div>
+        </div>
+        
+        <div class="js-taskList tasks-grid"></div>
+        <script src="script.js"></script>
+    </body>
+</html>

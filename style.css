@@ -1,0 +1,45 @@
+*{
+    font-size: large;
+    
+}
+.tasks-grid{
+    background: rgb(248, 248, 180);
+    border-top: 1px solid #030303;
+    border-bottom: 1px solid #030303;
+    transition: 0.5s;
+}
+.input-grid,
+.tasks-grid{
+    display: grid;
+    grid-template-columns: 1fr 200px 140px 100px 1fr;
+    column-gap: 8px;
+    row-gap: 5px;
+}
+div{
+    padding: 3px;
+}
+.input-grid{
+    margin-bottom: 5awpx;
+  
+}
+.Done-btn{
+    background: rgb(91, 250, 23);
+    border: none;
+    border-radius: 8px;
+    height: 27px;
+}
+.add-btn{
+    color: #fff;
+    background: #2c2cff;
+    border: none;
+    border-radius: 8px;
+    height: 36px;
+    width: 70px;
+    margin: auto;
+}
+input{
+    box-shadow: 0 0 6px rgb(0,0,0,0.7);
+    border: none;
+    border-radius: 5px;
+    padding-left: 6px;
+}
