@@ -1,45 +1,180 @@
-*{
-    font-size: large;
+/* Solarized color palette */
+:root {
+    --base03:    #002b36;
+    --base02:    #073642;
+    --base01:    #586e75;
+    --base00:    #657b83;
+    --base0:     #839496;
+    --base1:     #93a1a1;
+    --base2:     #eee8d5;
+    --base3:     #fdf6e3;
+    --yellow:    #b58900;
+    --orange:    #cb4b16;
+    --red:       #dc322f;
+    --magenta:   #d33682;
+    --violet:    #6c71c4;
+    --blue:      #268bd2;
+    --cyan:      #2aa198;
+    --green:     #859900;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--base3);
+    color: var(--base00);
+    margin: 0;
+    padding: 20px;
+}
+
+.main {
+    display: flex; 
+    gap:8px;
+    height: 580px;
+    max-height: 620px;
+}
+
+.add-task, .display-tasks {
+    background-color: var(--base2);
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.add-task {
+    width: 40%;
+    height: inherit;
+}
+
+.display-tasks {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: inherit;
+}
+.task-form{
+    background-color: #d7d1bf;
+    padding: 7px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1) inset;
+}
+h2 {
+    color: var(--blue);
+    margin-top: 0;
     
 }
-.tasks-grid{
-    background: rgb(248, 248, 180);
-    border-top: 1px solid #030303;
-    border-bottom: 1px solid #030303;
-    transition: 0.5s;
+.recommended h2{
+    margin-bottom: 8px;
 }
-.input-grid,
-.tasks-grid{
-    display: grid;
-    grid-template-columns: 1fr 200px 140px 100px 1fr;
-    column-gap: 8px;
-    row-gap: 5px;
+input[type="text"], textarea, input[type="date"], input[type="time"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--base1);
+    border-radius: 4px;
+    background-color: var(--base3);
+    color: var(--base00);
 }
-div{
-    padding: 3px;
+input[type="text"], textarea{
+    width: 92%;
 }
-.input-grid{
-    margin-bottom: 5awpx;
-  
+input[type="date"], input[type="time"]{
+    flex-direction: column;
+    width: 43.5%;
 }
-.Done-btn{
-    background: rgb(91, 250, 23);
+textarea {
+    height: 75px;
+    resize: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--base2) var(--base3); 
+    font-family: Arial, sans-serif;
+}
+
+button {
+    background-color: var(--blue);
+    color: var(--base3);
     border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: var(--cyan);
+}
+.recommended{
+    height: 25%;
+}
+.recommended{
+    
+    padding: 10px;
+    
+    background-color: #d7d1bf;
     border-radius: 8px;
-    height: 27px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1) inset;
 }
-.add-btn{
-    color: #fff;
-    background: #2c2cff;
-    border: none;
+.clock{
+    margin-top: 38px;
+    background-color: #d7d1bf;
+    padding: 10px 0 30px 0;
     border-radius: 8px;
-    height: 36px;
-    width: 70px;
-    margin: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1) inset;
 }
-input{
-    box-shadow: 0 0 6px rgb(0,0,0,0.7);
-    border: none;
-    border-radius: 5px;
-    padding-left: 6px;
+.tasklist, .recommended-task {
+    list-style-type: none;
+    padding: 0;
+    overflow-y: auto;
+    background-color: #d7d1bf;
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.6) inset, 0 2px 4px rgba(0,0,0,0.1);
+   
+    scrollbar-width: thin;
+    scrollbar-color: #d7d1bf var(--base3); 
+}
+.tasklist{
+    height: 75%;
+    max-height: inherit;
+}
+.recommended-task{
+    height: 103px;
+    margin: 2px;
+}
+.tasklist li, .recommended-task li{
+    background-color: var(--base3);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+ 
+}
+.task-title-container{
+    display: flex;
+}
+.display-name {
+    margin: 0;
+    color: var(--base01);
+    flex: 1;
+}
+
+.tasklist button, .recommended-task button {
+    background-color: #f5efdd;
+    
+    color: var(--base01);
+    padding: 4px;
+    flex: 0.06;
+    
+}
+.tasklist h6, .recommended-task h6{
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+}
+.tasklist .fa-trash-can:hover, .recommended-task .fa-trash-can:hover {
+    color: var(--red);
+}
+.tasklist .fa-pen:hover, .recommended-task .fa-pen:hover {
+    color: var(--yellow);
+}
+.tasklist p, .recommended-task p{
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: var(--base00);
 }

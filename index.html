@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Personal Scheduler</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-       
-        <div class="input-grid">
-            <div></div>
-            <input class="js-taskname" placeholder="Enter Task">
-            <input class="js-taskdate" type="date">
-            <button onclick="
-                addTask();
-            " class="add-btn">Add</button>
-            <div></div>
-        </div>
+<html lang="en">
+<head>
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
         
-        <div class="js-taskList tasks-grid"></div>
-        <script src="script.js"></script>
-    </body>
+            <div class="add-task">
+                <div class="task-form">
+                    <h2 class="form-title">Add Task:</h2>
+                    <form>
+                        <input type="text" class="title" placeholder="Enter Title for the task">
+                        <textarea class="info" placeholder="Description"></textarea>
+                        <input type="date" class="due">
+                        <input type="time" class="time">
+                        <button class="add-btn">Add</button>
+                    </form>
+                </div>
+                <div class="clock">
+                    <a href="https://logwork.com/current-time-in-badlapur-india-maharashtra" class="clock-widget-text" data-timezone="Asia/Kolkata" data-language="en">Clock</a>
+                </div>
+            </div>
+ 
+            <div class="display-tasks">
+                <div class="recommended">
+                    <h2>Recommended:</h2>
+                        <ul class="recommended-task">
+                        </ul>
+                </div>
+                <ul class="tasklist">
+                    
+                </ul>
+            </div>
+        </div>
+ 
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/2cebf648cb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.logwork.com/widget/text.js"></script>
+
+</body>
 </html>
